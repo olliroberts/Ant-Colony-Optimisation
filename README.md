@@ -2,6 +2,9 @@
 Python implementation of the Ant Colony Optimisation algorithm. 
 https://en.wikipedia.org/wiki/Ant_colony_optimization_algorithms
 
+### Requirements
+This implementation used the NumPy library. 
+
 ### How to use:
 Create a dictionary of nodes and their coordinates.
 ```
