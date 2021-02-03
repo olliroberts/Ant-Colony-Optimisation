@@ -217,6 +217,8 @@ class ant_colony:
                     current_node_idx = self.initial_route.index(next_node)
                     self.unvisited_nodes.remove(next_node)
                 distance = self.get_total_distance(route)
+                new_pheremone = np.zeros((self.adjacency.shape[0],
+                                          self.adjacency.shape[0]))
                 for node in range(len(route)):
                     current_node = route[node]
                     i = self.initial_route.index(current_node)
@@ -225,8 +227,6 @@ class ant_colony:
                     except:
                         next_node = route[0]
                     j = self.initial_route.index(next_node) 
-                    new_pheremone = np.zeros((self.adjacency.shape[0],
-                                              self.adjacency.shape[0]))
                     new_pheremone[i][j] = self.q/distance
                 if distance < self.distance_best:
                     self.route_best, self.distance_best = route, distance
